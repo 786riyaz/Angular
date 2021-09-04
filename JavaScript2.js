@@ -12,7 +12,7 @@ app.controller("FormController", function ($scope) {
     //Validate Function 
     $scope.sendForm = function () {
         $scope.msg = "Form Validated";
-		console.log("Done");
+	console.log("Done");
     };
 
     //Check Firstname and  Lastname
@@ -20,21 +20,23 @@ app.controller("FormController", function ($scope) {
         //document.getElementById("same").innerHTML = "same";
         //document.getElementsByName("sameName").innerHTML = "same class";
         if ($scope.Firstname === $scope.Lastname) {
-            //document.getElementByClassName("same").innerHTML = "Class";
-			console.log('First Name and Last Name are Same');
-			//console.log($scope.Firstname);
-            let ele = document.getElementsByClassName("same");
-            for (let i = 0; i < ele.length; i++) {
-                ele[i].innerHTML = "First name & Last name Should be unique";
-            }
-            //document.getElementById("same").innerHTML = "ID";
+            	//document.getElementByClassName("same").innerHTML = "Class";
+		console.log('First Name and Last Name are Same');
+		//console.log($scope.Firstname);
+		let ele = document.getElementsByClassName("same");
+		for (let i = 0; i < ele.length; i++) 
+		{
+			ele[i].innerHTML = "First name & Last name Should be unique";
+		}
+            	//document.getElementById("same").innerHTML = "ID";
         }
         else {
             // document.getElementsByClassName("same").innerHTML = "";
             //document.getElementById("same").innerHTML = "";
             let ele = document.getElementsByClassName("same");
-            for (let i = 0; i < ele.length; i++) {
-                ele[i].innerHTML = "";
+            for (let i = 0; i < ele.length; i++) 
+	    {
+		ele[i].innerHTML = "";
             }
         }
     };
