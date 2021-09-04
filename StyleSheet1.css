@@ -1,0 +1,28 @@
+﻿*.{
+    margin:5px;
+    padding:20px;
+}
+
+body {
+    background-color:blanchedalmond;
+}
+
+.title{
+    text-decoration-line:underline;
+    /*
+    margin-left:auto;
+    margin-right:auto;
+    justify-content:center;
+    border:5px solid red;*/
+}
+
+
+td{
+    /*
+    border:5px solid black;
+    */
+}
+
+.same{
+    color:red;
+}
