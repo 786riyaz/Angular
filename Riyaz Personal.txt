@@ -1,7 +1,0 @@
-https://www.c-sharpcorner.com/blogs/create-an-angularjs-application-with-vs-code
-
-https://www.tutorialsteacher.com/angularjs/angularjs-form
-
-https://www.tutlane.com/tutorial/angularjs/angularjs-ng-pattern-validation-email-with-regular-expressions
-
-https://www.tutorialsteacher.com/angularjs/angularjs-ng-app-directive

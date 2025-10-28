@@ -1,0 +1,8 @@
+ng new <project-name>
+ng new first-app 
+
+ng new <project-name> --no-standalone
+ng new first-app --no-standalone
+
+ng serve
+ng serve -o

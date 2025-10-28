@@ -1,0 +1,7 @@
+npm i @angular/cli
+npm i -g @angular/cli
+
+ng version
+
+ng serve
+ng serve -o
