@@ -1,0 +1,18 @@
+steps to create custom components ::: 
+1. create a folder in app folder let say "profile"
+2. then create ts file "profile.components.ts"
+    create a class in this ts file :: 
+        import { Component } from '@angular/core';
+        @Component({
+            selector: 'app-profile',
+
+            templateUrl: './profile.component.html',
+            template: `<h1>Profile Component</h1>`,
+
+            styleUrl: './profile.component.css'
+            styles : 'h1 {color:orange}
+                })
+        export class ProfileComponent {
+        }
+3. import the class in ts file of parent component
+4. use the component using selector tag in parent html component
