@@ -1,0 +1,10 @@
+In Angular, interpolation refers to the use of double curly braces {{ }} to bind data from your TypeScript component to your HTML template.
+
+It allows you to display dynamic values (like variables, expressions, or function results) directly inside your HTML.
+
+<p>Hello {{ userName }}!</p>
+
+
+<p>2 + 3 = {{ 2 + 3 }}</p>
+<p>Welcome {{ userName.toUpperCase() }}</p>
+<p>Current Year: {{ getYear() }}</p>
