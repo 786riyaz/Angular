@@ -1,0 +1,8 @@
+Data Types define which kind of data can we stored in a variable.
+var_name:data_type = value
+
+defining variable with Data Types
+let name:string = "RiyazKhan Pathan"
+
+defining variable without Data Types
+let name = "RiyazKhan Pathan"
