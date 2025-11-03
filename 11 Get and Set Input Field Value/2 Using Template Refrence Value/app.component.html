@@ -1,0 +1,14 @@
+<h1 class="projectTitle">{{projectName}}</h1>
+
+<!-- Here #emailField is the Template Refrence -->
+<input type="email" placeholder="Enter Email ID" #emailField>
+
+<button (click)="getEmail(emailField.value)">
+    Get Email
+</button>
+
+<button (click)="setEmail()">
+    Set Email
+</button>
+
+<input type="email" placeholder="Entered Email ID" value="{{displayEmailID}}" readonly>

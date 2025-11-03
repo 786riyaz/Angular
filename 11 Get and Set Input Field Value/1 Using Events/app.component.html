@@ -1,0 +1,5 @@
+<h1 class="projectTitle">{{projectName}}</h1>
+
+<input type="text" (input)="getName($event)" placeholder="Enter Name">
+<button (click)="setName($event)">Set Name</button>
+<input type="text" (input)="getName($event)" placeholder="Entered Name" value={{displayName}}>

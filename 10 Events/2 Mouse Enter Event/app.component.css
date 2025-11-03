@@ -1,0 +1,30 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.projectTitle {
+  text-align: center;
+  color: darkblue;
+  text-decoration: underline;
+  /* font-family: 'Arial', sans-serif; */
+}
+
+.btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.blueBox {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  margin: 20px auto;
+}

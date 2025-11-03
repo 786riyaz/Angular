@@ -1,0 +1,124 @@
+whenever we do any action using keyboard and mouse on UI thats called Event
+
+Mouse Event
+    Mouse Click
+    Mouse Hover
+
+===============================================================================
+
+
+Here’s a full reference list 👇
+
+## 🖱️ **Mouse Events**
+| Event           | Description                                                     |
+| --------------- | --------------------------------------------------------------- |
+| `(click)`       | Fired when an element is clicked                                |
+| `(dblclick)`    | Fired when an element is double-clicked                         |
+| `(mousedown)`   | Fired when a mouse button is pressed down                       |
+| `(mouseup)`     | Fired when a mouse button is released                           |
+| `(mouseenter)`  | Fired when the mouse pointer enters an element                  |
+| `(mouseleave)`  | Fired when the mouse pointer leaves an element                  |
+| `(mousemove)`   | Fired when the mouse pointer moves over an element              |
+| `(mouseover)`   | Fired when the mouse pointer enters the element or its children |
+| `(mouseout)`    | Fired when the mouse pointer leaves the element or its children |
+| `(contextmenu)` | Fired when the right mouse button is clicked (context menu)     |
+
+## ⌨️ **Keyboard Events**
+| Event        | Description                                                           |
+| ------------ | --------------------------------------------------------------------- |
+| `(keydown)`  | When a key is pressed down                                            |
+| `(keypress)` | When a key is pressed and held (deprecated in HTML5, but still works) |
+| `(keyup)`    | When a key is released                                                |
+
+## 🧍‍♂️ **Focus & Input Events**
+| Event      | Description                                                         |
+| ---------- | ------------------------------------------------------------------- |
+| `(focus)`  | When an element gains focus                                         |
+| `(blur)`   | When an element loses focus                                         |
+| `(input)`  | When the value of an `<input>`, `<textarea>`, or `<select>` changes |
+| `(change)` | When a control’s value changes *and loses focus*                    |
+| `(select)` | When text inside an input or textarea is selected                   |
+
+## 📝 **Form & Submit Events**
+| Event      | Description                    |
+| ---------- | ------------------------------ |
+| `(submit)` | Fired when a form is submitted |
+| `(reset)`  | Fired when a form is reset     |
+
+## 🪟 **Window / Document Events**
+| Event            | Description                                       |
+| ---------------- | ------------------------------------------------- |
+| `(scroll)`       | When an element or window is scrolled             |
+| `(resize)`       | When the window is resized                        |
+| `(load)`         | When the page or an image is fully loaded         |
+| `(unload)`       | When the page is unloaded (navigation away)       |
+| `(beforeunload)` | When a user is about to leave the page            |
+| `(error)`        | When an error occurs during loading of an element |
+
+## 📱 **Clipboard Events**
+| Event     | Description                  |
+| --------- | ---------------------------- |
+| `(copy)`  | When the user copies content |
+| `(cut)`   | When the user cuts content   |
+| `(paste)` | When the user pastes content |
+
+## 💡 **Drag & Drop Events**
+| Event         | Description                               |
+| ------------- | ----------------------------------------- |
+| `(drag)`      | When an element is being dragged          |
+| `(dragstart)` | When drag starts                          |
+| `(dragend)`   | When drag stops                           |
+| `(dragenter)` | When a dragged item enters a drop target  |
+| `(dragover)`  | When a dragged item is over a drop target |
+| `(dragleave)` | When a dragged item leaves a drop target  |
+| `(drop)`      | When a dragged item is dropped            |
+
+## 🖼️ **Media Events (Audio/Video/Image)**
+| Event              | Description                             |
+| ------------------ | --------------------------------------- |
+| `(play)`           | When playback starts                    |
+| `(pause)`          | When playback is paused                 |
+| `(ended)`          | When playback ends                      |
+| `(volumechange)`   | When volume is changed                  |
+| `(timeupdate)`     | When playback position changes          |
+| `(loadeddata)`     | When media data is loaded               |
+| `(loadedmetadata)` | When metadata (like duration) is loaded |
+| `(error)`          | When media fails to load                |
+
+## 🧭 **Touch Events (for mobile devices)**
+| Event           | Description                                           |
+| --------------- | ----------------------------------------------------- |
+| `(touchstart)`  | When a touch point is placed on the screen            |
+| `(touchmove)`   | When a touch point is moved along the screen          |
+| `(touchend)`    | When a touch point is removed                         |
+| `(touchcancel)` | When a touch event is interrupted (e.g. system alert) |
+
+## 🖲️ **Pointer Events (modern mouse/touch/pen)**
+| Event             | Description                                    |
+| ----------------- | ---------------------------------------------- |
+| `(pointerdown)`   | When a pointer makes contact                   |
+| `(pointerup)`     | When a pointer stops contact                   |
+| `(pointermove)`   | When a pointer moves                           |
+| `(pointerenter)`  | When a pointer enters an element               |
+| `(pointerleave)`  | When a pointer leaves an element               |
+| `(pointercancel)` | When a pointer is canceled (e.g. system event) |
+
+## 🧩 **Other Useful Events**
+| Event              | Description              |
+| ------------------ | ------------------------ |
+| `(wheel)`          | Mouse wheel scroll       |
+| `(animationstart)` | CSS animation starts     |
+| `(animationend)`   | CSS animation ends       |
+| `(transitionend)`  | CSS transition ends      |
+| `(contextmenu)`    | Right-click context menu |
+| `(dblclick)`       | Double click             |
+| `(mouseenter)`     | Mouse enters element     |
+| `(mouseleave)`     | Mouse leaves element     |
+
+### 🧠 Tip:
+All these native DOM events can be used directly in Angular like:
+<div (click)="onClick($event)"></div>
+<input (focus)="onFocus($event)" (blur)="onBlur($event)">
+<button (mouseenter)="onEnter($event)" (mouseleave)="onLeave($event)">Hover Me</button>
+
+Angular just uses **native browser events** under the hood — so you can use almost *any* standard HTML event with `(eventName)` binding syntax.
