@@ -1,0 +1,33 @@
+.projectTitle {
+  text-align: center;
+  color: darkblue;
+  text-decoration: underline;
+  /* font-family: 'Arial', sans-serif; */
+}
+
+button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.blueBox {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  margin: 20px auto;
+}
+
+input[type="text"], input[type="email"] {
+  display: block;
+  margin: 20px auto;
+  padding: 10px;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}

@@ -1,0 +1,22 @@
+<h1 class="projectTitle">{{projectName}}</h1>
+
+<br><br>
+<p
+  [style.color]="'blue'"
+  [style.fontSize.px]="20"
+  [style.backgroundColor]="'lightgray'"
+  >
+  Paragraph with dynamic styles
+</p>
+<br><br>
+
+<!-- This do not support directly -->
+<p color="red">This is Sample Paragraph</p>
+
+<!-- Single properties -->
+<p [style.color]="'crimson'">Status text</p>
+<p [style.fontSize.px]="66">Fixed font size</p>
+
+<!-- Multiple styles -->
+<p [style]="{ padding:'10px', margin: '8px 0', lineHeight: '1.6', border:'5px solid black' }">Styled paragraph</p>
+<p [style]="'display: block; padding: 12px'">String styles</p>

@@ -1,0 +1,1 @@
+When the style value initialized or being changed in TS file and used in HTML file then it is called dynamic styling.

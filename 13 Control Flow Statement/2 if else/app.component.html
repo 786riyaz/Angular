@@ -1,0 +1,10 @@
+<h1 class="projectTitle">{{projectName}}</h1>
+
+<button (click)="display = !display">Toggle</button>
+@if (display) {
+<!-- @if (x<10) { -->
+    <div style="width: 100px; height: 100px; background-color: blue;"></div>
+} @else {
+    <div style="width: 100px; height: 100px; background-color: green;"></div>
+}
+<div style="width: 100px; height: 100px; background-color: red;"></div>
