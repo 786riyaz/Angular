@@ -1,0 +1,17 @@
+contextual variable are useful in for loop for doing different task on different conditions.
+this is default variables.
+
+$count
+$index
+$first
+$last
+$odd
+$even
+
+empty block with for loop
+
+
+<!-- Basic For Loop -->
+@for (user of users; track $index) {
+    <h3>{{$index}} --- {{user}}</h3>
+}

@@ -1,0 +1,13 @@
+<h1 class="projectTitle">{{projectName}}</h1>
+
+<!-- Basic For Loop -->
+@for (user of users; track $index) {
+    <h3>{{$index}} --- {{user}}</h3>
+}
+
+<hr>
+
+<!-- Basic For Loop -->
+@for (user of users; track user; let i=$index) {
+    <h3>{{i+1}} --- {{user}}</h3>
+}

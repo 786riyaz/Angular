@@ -1,0 +1,20 @@
+<h1 class="projectTitle">{{projectName}}</h1>
+
+<h2>Printing Without For Loop</h2>
+<h3>{{userNames[0]}}</h3>
+<h3>{{userNames[1]}}</h3>
+<h3>{{userNames[2]}}</h3>
+<h3>{{userNames[3]}}</h3>
+<hr>
+
+
+<h2>Printing With For Loop</h2>
+@for(user of userNames; track user) {
+  <h3>{{user}}</h3>
+}
+
+<!-- @for(item of userDetails; track item.name) { -->
+@for(item of userDetails; track item.name; let id = $index) {
+  <!-- <h3>{{id}} -- {{item.name}} - {{item.age}} - {{item.city}} ===> <button (click)="printDetails(item)">Print</button></h3> -->
+  <h3>{{id+1}} -- {{item.name}} - {{item.age}} - {{item.city}} ===> <button (click)="printDetails(item)">Print</button></h3>
+}

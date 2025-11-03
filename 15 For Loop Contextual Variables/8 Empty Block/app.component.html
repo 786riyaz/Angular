@@ -1,0 +1,16 @@
+<h1 class="projectTitle">{{projectName}}</h1>
+
+@for (user of users; track user;let i=$index;) {
+    <h3>Total :: {{$count}}</h3>
+    @if($first){
+        <h3>Total :: {{$count}}</h3>
+    }
+    @if ($even) {
+         <h3 style="color: red;">{{i+1}} --- {{user}}</h3>
+    } @else {
+         <h3>{{i+1}} --- {{user}}</h3>
+    }
+}
+@empty {
+    <h2>No Data Available</h2>
+}
