@@ -1,0 +1,5 @@
+There are three ways to pass data from one page to another page 
+
+1. Pass data with Router Link
+2. Pass Data with button click
+3. Pass data with Router File

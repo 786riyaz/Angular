@@ -1,0 +1,11 @@
+<h1>Home Page</h1>
+
+<ul>
+    @for(user of users; track user){
+        <li>
+            <a routerLink="user/{{user}}">
+                {{user}}
+            </a>
+        </li>
+    }
+</ul>

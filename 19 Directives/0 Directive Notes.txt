@@ -1,0 +1,21 @@
+Directive is a class that provides additional behavior to elements in the application
+
+feature that help you to provide more power to DOM elements
+
+if-else condition
+for loop
+add style
+ngIf, ngFor, ngStyle, ngSwitch, ngClass
+
+============================================================
+Types of Directive
+============================================================
+Component Directives
+    The most common type of Directive
+    used in component template file
+Structural Directives
+    Change the structure of the DOM by adding, removing or manipulating elements.
+Attribute Directive
+    Modify the appearance or behavior of an existing element
+============================================================
+

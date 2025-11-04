@@ -1,0 +1,9 @@
+Routing is a mechanism to move from one page to another page or we can say from one component to another component.
+
+
+We have to create different component for each page
+Then we have to make entry of each of the page in the app.routes.ts file along with their component.
+
+then we have to import RouterOutlet and RouterLink in TS file
+
+<router-outlet> is the element where the content will be visible.

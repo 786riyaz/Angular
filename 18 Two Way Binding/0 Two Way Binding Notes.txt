@@ -1,0 +1,5 @@
+Two way binding is a way to bind data is HTML(template) and TS file.
+
+We can achieve two way binding using many different ways like event etc.
+
+But the proper way is to bind is using Form Modules like ngModel

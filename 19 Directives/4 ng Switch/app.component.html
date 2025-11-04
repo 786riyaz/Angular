@@ -1,0 +1,12 @@
+<h1 class="projectTitle">{{projectName}}</h1>
+
+<div [ngSwitch]="color">
+    <h3 *ngSwitchCase="'red'" style="color: red;">Red Color</h3>
+    <h3 *ngSwitchCase="'green'" style="color: green;">Green Color</h3>
+    <h3 *ngSwitchCase="'blue'" style="color: blue;">Blue Color</h3>
+    <h3 *ngSwitchDefault style="color: black;">Black Color</h3>
+</div>
+
+<button (click)="changeColor('red')">Red</button>
+<button (click)="changeColor('green')">Green</button>
+<button (click)="changeColor('blue')">Blue</button>

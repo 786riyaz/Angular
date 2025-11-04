@@ -1,0 +1,20 @@
+<h1 class="projectTitle">{{projectName}}</h1>
+
+<button *ngIf="loggedIn==false">Login</button>
+<button *ngIf="loggedIn==true">Log out</button>
+<hr>
+
+<button *ngIf="loggedIn; else elseBlock">Log out</button>
+<ng-template #elseBlock>
+    <button>Login</button>
+</ng-template>
+<hr>
+
+<h3 *ngIf="block==0">Heading 0</h3>
+<h3 *ngIf="block==1">Heading 1</h3>
+<h3 *ngIf="block==2">Heading 2</h3>
+<h3 *ngIf="block==3">Heading 3</h3>
+<h3 *ngIf="block==4">Heading 4</h3>
+<h3 *ngIf="block==5">Heading 5</h3>
+
+<button (click)="changeHeading()">Change Heading</button>

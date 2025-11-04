@@ -1,0 +1,28 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
+    /* border: 2px solid red; */
+}
+
+ul{
+    list-style-type: none;
+    display: flex;
+    vertical-align: middle;
+    /* border: 2px solid green; */
+}
+
+ul li {
+    margin-left: 10px;
+    margin-top: 10px;
+    vertical-align: middle;
+    /* border: 2px solid blue; */
+}
+
+ul li a {
+    text-decoration: none;
+}
+
+.active{
+    background-color: skyblue;
+}

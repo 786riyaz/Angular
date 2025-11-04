@@ -1,0 +1,18 @@
+<h1 class="projectTitle">{{projectName}}</h1>
+
+<ul>
+    <li *ngFor="let x of students">
+        {{x}}
+    </li>
+</ul>
+
+<ul>
+    <li *ngFor="let data of studentsData">
+        {{data.name}} -- {{data.age}} -- {{data.email}} -- ({{data.edu}})
+        <ol>
+            <li *ngFor="let edu of data.edu">
+                {{edu}}
+            </li>
+        </ol>
+    </li>
+</ul>
