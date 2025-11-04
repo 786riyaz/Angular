@@ -1,0 +1,3 @@
+In angular, By Default all the components/code are being loaded on browser.
+
+This creates issue when website is too big or we want to load some component only when needed.
