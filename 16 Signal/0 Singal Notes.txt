@@ -1,0 +1,11 @@
+Signal are more or less like property. But signals are reactive.
+We get a Effect function which we can utilize for doing another task.
+
+Signal is a wrapper around value. This gives signal when value changes.
+
+count = 10 <====== This is normal property
+count = signal(10)  <====== This is signal declaration
+
+Any type of value can we stores in signal.
+
+Types :: Writable, Computable
