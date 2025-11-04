@@ -1,0 +1,7 @@
+<h1 class="projectTitle">{{projectName}}</h1>
+<hr>
+
+<h3>Salary in INR: {{salary}}</h3>
+<h3>Salary in USD: {{salary | currencyConverter}}</h3>
+<h3>Salary in CNY: {{salary | currencyConverter:12:'CNY'}}</h3>
+<h3>Salary in EUR: {{salary | currencyConverter:90:'EUR'}}</h3>

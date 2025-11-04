@@ -1,0 +1,4 @@
+When a component used another component in it, it's called Parent component.
+
+Parent - Child Communication is way to pass data from parent component to child component or from child component to parent component.
+

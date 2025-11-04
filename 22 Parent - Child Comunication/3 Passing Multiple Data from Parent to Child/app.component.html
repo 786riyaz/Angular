@@ -1,0 +1,13 @@
+<h1 class="projectTitle">{{projectName}}</h1>
+<hr>
+<!-- ====================================================== -->
+<app-user user={{userName}} city="Ahmedabad"></app-user>
+<hr>
+<app-user [user]="userName" city="Ahmedabad"></app-user>
+
+<select #selectedUser (change)="onUserChange(selectedUser.value)">
+    <option value="Riyaz">Riyaz</option>
+    <option value="Arbaz">Arbaz</option>
+    <option value="Tasin">Tasin</option>
+    <option value="Femida">Femida</option>
+</select>

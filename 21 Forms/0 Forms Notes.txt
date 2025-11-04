@@ -1,0 +1,15 @@
+Forms are collection of input fields.
+Used for Login, sign up, email subscription, adding or updating data in db
+
+
+Types of Forms in Angular
+1. Reactive
+2. Template-Driven
+
+Reactive forms are more scalable, reusable and testable.
+when multiple data fields.
+when complex data and validation.
+Structured and Mutable
+
+Template Driven forms are use for straight forward, simple form creation.
+Unstructured and mutable

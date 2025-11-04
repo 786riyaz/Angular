@@ -1,0 +1,35 @@
+<h1 class="projectTitle">{{projectName}}</h1>
+<hr>
+
+<form action="" method="get" [formGroup]="profileForm" (ngSubmit)="submitData()">
+
+    <button (click)="setDefaultValue()">Set Default Values</button><br>
+
+    <input type="text" placeholder="Enter First Name" formControlName="firstName"> <br>
+    <!-- Step 3 :: Check the validation message -->
+    <span *ngIf="firstName?.hasError('required') && ( firstName?.touched || firstName?.dirty)"
+        class="validationError">First Name is required</span>
+    <br *ngIf="firstName?.hasError('required') && ( firstName?.touched || firstName?.dirty)">
+
+    <input type="text" placeholder="Enter Last Name" formControlName="lastName"> <br>
+    <span *ngIf="lastName?.hasError('required') && ( lastName?.touched || lastName?.dirty)" class="validationError">Last
+        Name is required</span>
+    <br *ngIf="lastName?.hasError('required') && ( lastName?.touched || lastName?.dirty)">
+
+    <input type="password" placeholder="Enter Password" formControlName="password">
+    <div *ngIf="password?.invalid && (password?.touched || password?.dirty)" class="validationError">
+        <span *ngIf="password?.hasError('required')">Password is required</span>
+        <span *ngIf="password?.hasError('minlength')">Password must be at least 5 characters</span>
+    </div>
+
+    <br>
+    <input type="email" placeholder="Enter Email ID" formControlName="emailId">
+    <div *ngIf="emailId?.invalid && (emailId?.touched || emailId?.dirty)" class="validationError">
+        <span *ngIf="emailId?.hasError('required')">Email is required</span>
+        <span *ngIf="emailId?.hasError('maxlength')">Email must not be more than 20 characters</span>
+        <span *ngIf="emailId?.hasError('pattern')">Please Enter Valid Email ID</span>
+    </div> <br>
+    <input type="text" placeholder="Test Field" formControlName="test"> <br>
+
+    <button>Submit</button>
+</form>

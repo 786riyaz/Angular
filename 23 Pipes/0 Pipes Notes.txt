@@ -1,0 +1,150 @@
+Pipes in angular are useful to transform the data.
+
+let say we want to transform all the characters of string to upper case then we can use uppercase pipe.
+
+same way there are different pipes are available like...
+
+
+and here are some examples
+
+ng generate pipe currencyConverter
+ng generate pipe pipe/currencyConverter
+
+===========================================================================
+Here is a ready-to-copy revision sheet text containing concise explanations and examples of Angular pipes for quick study and interview prep, formatted as a single text file sectioned with headers and code blocks. All examples follow current Angular guidance for templates, parameters, chaining, and best practices around purity, precedence, and localization.[1][2][3]
+
+### What are pipes
+Pipes are template-time transformation functions used with the vertical bar operator | to transform values for display without changing the underlying data model [1]. The left-hand side supplies the input, and the right-hand side names the pipe and optional parameters to control formatting or behavior [1]. Pipes are typically pure functions that re-run only when the primitive value or input reference changes, improving performance in change detection [1].
+
+### Syntax basics
+Use the format {{ value | pipeName:arg1:arg2 }} where multiple arguments are colon-separated and multiple pipes can be chained left-to-right in a single expression [1]. For example, {{ dateValue | date:'hh:mm':'UTC' }} formats a time in UTC, and {{ dateValue | date | uppercase }} applies a date format and then converts it to uppercase [1]. Parentheses are recommended when mixing pipes with other operators because the pipe operator has specific precedence relative to +, -, &&, ||, and the ternary operator [1].
+
+### Core built-in pipes
+- AsyncPipe unwraps Observables or Promises to the latest emitted value and auto-unsubscribes on component destroy to avoid leaks.[2]
+- DatePipe formats Date, timestamp, or ISO strings with predefined or custom tokens and respects locale and optional timezone.[3]
+- CurrencyPipe formats numbers as localized currency using ISO codes, chosen symbol or code, and optional digits control.[1]
+- DecimalPipe and PercentPipe format numbers and percentages according to locale with precision options.[1]
+- UpperCasePipe, LowerCasePipe, and TitleCasePipe transform string casing for display.[1]
+- JsonPipe renders objects using JSON.stringify for quick debugging in templates.[1]
+- SlicePipe extracts subsequences of strings or arrays by start/end indices.[1]
+- KeyValuePipe turns Objects or Maps into arrays of key/value pairs for easy iteration in templates.[1]
+- I18nSelectPipe and I18nPluralPipe choose text based on selection keys and plural rules for proper localization.[1]
+
+### Quick string case examples
+```html
+<p>{{ 'angular pipes' | titlecase }}</p>
+<p>{{ 'make me upper' | uppercase }}</p>
+<p>{{ 'MAKE ME LOWER' | lowercase }}</p>
+```
+These casing pipes apply simple, display-only transformations directly in the template without changing the original string.[1]
+
+### DatePipe essentials
+DatePipe supports predefined tokens like 'shortDate', 'fullDate', and 'shortTime', plus custom formats and an optional timezone parameter. Defaults come from locale settings, and the DATE_PIPE_DEFAULT_OPTIONS token can set defaults for format and timezone if not provided inline. Mutating a Date object will not trigger reformatting; create a new Date to ensure the pipe re-executes in pure mode.[3]
+```html
+<p>{{ today | date }}</p>
+<p>{{ today | date:'fullDate' }}</p>
+<p>{{ today | date:'MMM dd, yyyy \'at\' hh:mm a' }}</p>
+<p>{{ today | date:'hh:mm':'UTC' }}</p>
+```
+
+### Currency and numbers
+CurrencyPipe accepts currency code, display mode (symbol, code, symbol-narrow, or custom string), and digitsInfo to control integer and fraction digits. DecimalPipe and PercentPipe similarly accept digitsInfo for localized numeric presentation with minimal template logic.[1]
+```html
+<p>{{ amount | currency }}</p>
+<p>{{ amount | currency:'INR' }}</p>
+<p>{{ amount | currency:'INR':'code' }}</p>
+<p>{{ price | number }}</p>
+<p>{{ rate | percent }}</p>
+```
+
+### AsyncPipe with Observables/Promises
+AsyncPipe subscribes to an Observable or Promise, updates the UI with the latest value, marks the component for check, and automatically unsubscribes on destroy to prevent memory leaks. When the reference changes, AsyncPipe unsubscribes from the old source and subscribes to the new one without manual code in the component.[2]
+```ts
+// component.ts
+items$ = fetchItemsAsObservable(); // Observable<Item[]>
+```
+```html
+<ul>
+  <li *ngFor="let item of items | async">{{ item.name }}</li>
+</ul>
+```
+
+### JSON, slice, and key/value
+JsonPipe is helpful for quick debugging and inspection of objects in a template, while SlicePipe extracts subranges for strings or arrays. KeyValuePipe converts Objects or Maps into arrays of {key, value} pairs for iteration, which is convenient for dynamic field rendering.[1]
+```html
+<pre>{{ someObject | json }}</pre>
+<p>{{ 'ABCDEFGHI' | slice:2:6 }}</p> <!-- CDEF -->
+<div *ngFor="let pair of user | keyvalue">
+  {{ pair.key }}: {{ pair.value }}
+</div>
+```
+
+### Chaining and parameters
+Chaining lets the output of one pipe feed the next, such as date followed by uppercase, or currency followed by slice to trim. Parameters are colon-separated, and multiple parameters can be specified in order as required by the specific pipe such as format and timezone for DatePipe.[1]
+```html
+<p>{{ scheduledOn | date:'fullDate' | uppercase }}</p>
+<p>{{ scheduledOn | date:'hh:mm':'UTC' }}</p>
+```
+
+### Standalone imports usage
+In standalone components, import specific pipes like DatePipe, CurrencyPipe, or TitleCasePipe into the component’s imports array to use them in the template. Angular applies locale-aware formatting for date, number, and currency pipes based on the current LOCALE_ID configuration.[1]
+```ts
+import { Component } from '@angular/core';
+import { CurrencyPipe, DatePipe, TitleCasePipe } from '@angular/common';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [CurrencyPipe, DatePipe, TitleCasePipe],
+  template: `
+    <h1>Purchases from {{ company | titlecase }} on {{ purchasedOn | date }}</h1>
+    <p>Total: {{ amount | currency }}</p>
+  `,
+})
+export class ShoppingCartComponent {
+  amount = 123.45;
+  company = 'acme corporation';
+  purchasedOn = '2024-07-08';
+}
+```
+This pattern keeps transformation logic declarative and localized across templates while avoiding component code bloat.[1]
+
+### Custom pipe pattern
+A custom pipe is a class decorated with @Pipe that implements PipeTransform.transform(value, ...args) to return a transformed value. Keep pipes pure by default for performance, and only mark pure: false for cases that must react to internal mutations at the cost of frequent re-execution.[1]
+```ts
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({ name: 'kebabCase' })
+export class KebabCasePipe implements PipeTransform {
+  transform(value: string): string {
+    return value.toLowerCase().replace(/ /g, '-');
+  }
+}
+```
+
+### Operator precedence reminder
+The pipe operator has lower precedence than most binary operators but higher precedence than the ternary operator, so use parentheses to enforce intended evaluation order in complex expressions. For example, wrap concatenations or ternary results before piping to a transformer to avoid ambiguous parsing.[1]
+```html
+<!-- Good -->
+{{ (firstName + ' ' + lastName) | uppercase }}
+
+<!-- Good -->
+{{ (isAdmin ? 'Access granted' : 'Access denied') | uppercase }}
+```
+
+### Practical tips
+Prefer pipes for display-only formatting and keep transformation logic lightweight to avoid performance penalties during change detection cycles. Treat Date instances as immutable and replace object references when using pure pipes to ensure re-execution when needed, especially for dates and arrays. AsyncPipe simplifies template binding to async streams and prevents leaks by handling subscription lifecycles automatically.[2][3][1]
+
+### Mini checklist for revision
+- Use | with optional :param1:param2 syntax and chain multiple pipes left-to-right in templates [1].  
+- DatePipe supports predefined tokens, custom formats, and timezone; create a new Date to trigger pure change detection.[3]
+- AsyncPipe auto-subscribes/unsubscribes and updates the view for Observables and Promises without manual code.[2]
+- Import specific pipes into standalone components via the imports array for locale-aware formatting.[1]
+- Keep custom pipes pure by default; mark pure: false only when necessary due to overhead.[1]
+
+### One-liners for quick recall
+- Pipes are declarative transformers used directly in templates with | [1].  
+- Parameters are colon-separated and can be combined with chaining.[1]
+- AsyncPipe handles stream values and lifecycle automatically.[2]
+- DatePipe is locale-aware and supports many predefined and custom formats.[3]
+- Use parentheses to avoid precedence pitfalls in mixed expressions.[1]

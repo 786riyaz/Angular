@@ -1,0 +1,6 @@
+<h1 class="projectTitle">{{projectName}}</h1>
+<hr>
+<!-- ====================================================== -->
+@for (user of users; track user) {
+    <app-user [user]="user" city="Ahmedabad"></app-user>
+}

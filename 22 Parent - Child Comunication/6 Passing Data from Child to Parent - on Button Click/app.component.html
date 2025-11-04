@@ -1,0 +1,9 @@
+<h1 class="projectTitle">{{projectName}}</h1>
+<hr>
+<!-- ====================================================== -->
+
+<app-user (getUsers)="handleUsers($event)"></app-user>
+
+@for (user of users; track user) {
+    <h3>{{user}}</h3>
+}

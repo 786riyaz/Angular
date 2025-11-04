@@ -1,0 +1,5 @@
+Form grouping is useful when we have multiple fields.
+
+We then don't have to define different form controls for each field.
+
+It will make the code faster, better and error free.

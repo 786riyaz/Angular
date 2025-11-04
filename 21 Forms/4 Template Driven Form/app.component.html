@@ -1,0 +1,20 @@
+<h1 class="projectTitle">{{projectName}}</h1>
+<hr>
+
+<form action="" #userForm="ngForm" (ngSubmit)="addDetails(userForm.value)">
+    <input type="text" name="name" placeholder="Enter Name" ngModel>
+    <input type="password" name="password" placeholder="Enter Password" ngModel>
+    <select name="gender" id="" ngModel>
+        <option value="">Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select>
+    <input type="range" min="10" max="30" name="range" [(ngModel)] = "rangeValue">
+    <span>Selected Age :: {{rangeValue}} </span>
+    <button>Add User</button>
+</form>
+
+<h3 *ngIf="userData.name"> User Name :: {{userData.name}}</h3>
+<h3 *ngIf="userData.password"> Password :: {{userData.password}}</h3>
+<h3 *ngIf="userData.gender"> Gender :: {{userData.gender}}</h3>
+<h3 *ngIf="userData.range"> Age :: {{userData.range}}</h3>
