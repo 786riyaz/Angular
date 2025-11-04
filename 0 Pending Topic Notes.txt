@@ -1,0 +1,4 @@
+what is the difference between ngModules and StandAlone approch of Angular
+
+ngModule
+app.module.ts

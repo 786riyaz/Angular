@@ -1,0 +1,39 @@
+<h1 class="projectTitle">{{projectName}}</h1>
+
+<input type="text" placeholder="Enter Task" [(ngModel)]="newTask">
+<input type="text" placeholder="Enter Time" [(ngModel)]="newTime">
+<button style="background-color: green;" (click)="addNewTask()">Add Task</button>
+
+<div class="tableDiv">
+    <table>
+        <thead>
+            <tr style="background-color: black; color: white;">
+                <td>Series</td>
+                <td>Task Details</td>
+                <td>Time</td>
+                <td>Edit</td>
+            </tr>
+        </thead>
+        <tbody>
+            @for (task of taskList; track $index) {
+                @if ($even) {
+                    <tr style="background-color: aqua;">
+                        <td>{{$index+1}}</td>
+                        <td>{{task.Task}}</td>
+                        <td>{{task.Time}}</td>
+                        <td> <button (click)="deleteTask($event)" name={{$index}}> Delete </button> </td>
+                        <!-- <td> <button (click)="deleteTask($index)"> Delete </button> </td> -->
+                    </tr>
+                } @else {
+                    <tr>
+                        <td>{{$index+1}}</td>
+                        <td>{{task.Task}}</td>
+                        <td>{{task.Time}}</td>
+                        <td> <button (click)="deleteTask($event)" name={{$index}}> Delete </button> </td>
+                        <!-- <td> <button (click)="deleteTask($index)"> Delete </button> </td> -->
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

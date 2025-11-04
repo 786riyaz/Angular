@@ -1,0 +1,72 @@
+.projectTitle {
+  text-align: center;
+  color: darkblue;
+  text-decoration: underline;
+  /* font-family: 'Arial', sans-serif; */
+}
+
+.container {
+  background-color: darkslategrey;
+  color: white;
+  width: 200px;
+  margin: 0 auto;
+  text-align: center;
+  border: 2px solid black;
+  padding: 3px;
+  border-radius: 10px;
+  /* box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1); */
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+  padding: 10px;
+  /* border: 2px solid; */
+}
+
+button {
+  padding: 20px;
+  width: 100px;
+  height: 100px;
+  font-size: 16px;
+
+  border: 3px solid black;
+  border-radius: 50%;
+
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  font-weight: bold;
+
+  /* background-color: #007bff; */
+  /* color: white; */
+  /* transition: background-color 0.3s ease; */
+}
+
+.greenButton {
+  background-color: #28a745;
+  color: white;
+}
+
+.redButton {
+  background-color: #dc3545;
+  color: white;
+}
+
+.resetButton {
+  background-color: #ffc107;
+  color: black;
+}
+
+button:hover {
+  border: 5px solid greenyellow;
+}
+
+button:active {
+  transform: scale(0.95);
+}

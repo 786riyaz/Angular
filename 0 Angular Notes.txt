@@ -1,0 +1,10 @@
+src/index.html ---> src/main.ts ---> src/app/app.component
+
+spec file is for testing
+provide Zone Change Detection - eventCoalescing
+constructor ---> ngOnInit ---> 
+
+const routes : Route = [
+    {path:'', redirectTo:'/home', pathMatch:'full'},
+    {path:'home', component:HomeComponent}
+]

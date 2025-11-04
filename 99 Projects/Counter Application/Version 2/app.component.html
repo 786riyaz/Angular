@@ -1,0 +1,10 @@
+<h1 class="projectTitle">{{projectName}}</h1>
+
+<div class="container">
+    <h2>{{counter}}</h2>
+</div>
+<div class="buttonContainer">
+    <button class="greenButton" (click)="handleCounter('add')">Increment</button>
+    <button class="resetButton" (click)="handleCounter('reset')">Reset</button>
+    <button class="redButton" (click)="handleCounter('minus')">Decrement</button>
+</div>
