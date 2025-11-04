@@ -1,0 +1,8 @@
+<h1 class="projectTitle">{{projectName}}</h1>
+<hr>
+<button (click)="increaseCounter()">Increase Counter</button>
+<button (click)="increaseData()">Increase Data</button>
+{{count}}
+<div *ngIf="count==3 || count==0" >
+    <app-profile [data_To_Send]="data_To_Send"></app-profile>
+</div>

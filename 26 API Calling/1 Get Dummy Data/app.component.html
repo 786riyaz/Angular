@@ -1,0 +1,11 @@
+<h1 class="projectTitle">{{projectName}}</h1>
+<hr>
+
+@for(product of productList; track product.id){
+    <h2>Product Title :: {{product.title}}</h2>
+    <h3>Category :: {{product.category}} </h3>
+    <h4>Product Description :: {{product.description}} </h4>
+    <h6>Availability :: {{product.availabilityStatus}} </h6>
+    <img src="{{product.thumbnail}}" alt="">
+    <hr>
+}

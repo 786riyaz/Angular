@@ -1,0 +1,32 @@
+<h1 class="projectTitle">{{projectName}}</h1>
+<hr>
+
+<form #userForm="ngForm" (ngSubmit)="addUser(userForm.value)">
+    <input type="text" placeholder="Enter Name" name="name" ngModel>
+    <input type="text" placeholder="Enter Age" name="age" ngModel>
+    <input type="text" placeholder="Enter email" name="email" ngModel>
+    <button>Add User</button>
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <!-- <td>ID</td> -->
+            <td>Name</td>
+            <td>Age</td>
+            <td>Email ID</td>
+            <td>Action</td>
+        </tr>
+    </thead>
+    <tbody>
+        @for(user of usersList; track user.id){
+        <tr>
+            <!-- <td> {{user.id}}</td> -->
+            <td> {{user.name}}</td>
+            <td> {{user.age}}</td>
+            <td> {{user.email}}</td>
+            <td> <Button (click)="deleteUser(user.id)">Delete</Button></td>
+        </tr>
+        }
+    </tbody>
+</table>

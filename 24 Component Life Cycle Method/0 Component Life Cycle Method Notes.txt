@@ -1,0 +1,24 @@
+Component life cycle based on each component instead react application.
+
+If there are 100 component in an angular application that there will be 100 life cycles.
+==============================================================================
+Phase and Method list
+Creation 
+    constructor
+
+Change Detection
+    ngOnInit
+    ngOnChange
+    ngDoCheck
+    ngAfterContentInit
+    ngAfterContentChecked
+    ngAfterViewInit
+    ngAfterViewChecked
+
+Rendering
+    afterNextRender
+    afterRender
+
+Destruction
+    ngOnDestroy
+==============================================================================

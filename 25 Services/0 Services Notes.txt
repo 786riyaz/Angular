@@ -1,0 +1,4 @@
+Services provides a way for to separate Angular app data and functions that can be used by multiple components in your app.
+
+ng generate service product
+ng generate service services/product

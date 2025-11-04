@@ -1,0 +1,61 @@
+.projectTitle {
+  text-align: center;
+  color: darkblue;
+  text-decoration: underline;
+  /* font-family: 'Arial', sans-serif; */
+}
+
+button {
+  display: inline;
+  padding: 6px;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  display: flex;
+  margin:10px auto;
+  font-size: xx-large;
+  /* margin:10px; */
+  /* justify-content: center; */
+}
+
+button:disabled{
+  background-color: gray;
+}
+
+.blueBox {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  margin: 20px auto;
+}
+
+input[type="text"],
+select,
+input[type="password"],
+input[type="range"],
+input[type="email"] {
+  display: block;
+  margin: 10px auto;
+  padding: 7px;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+ul{
+  list-style-type: none;
+  display: flex;
+}
+
+li{
+  margin-right: 20px;
+}
+
+.validationError{
+  color: red;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}

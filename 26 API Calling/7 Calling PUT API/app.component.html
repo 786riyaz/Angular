@@ -1,0 +1,37 @@
+<h1 class="projectTitle">{{projectName}}</h1>
+<hr>
+
+<form #userForm="ngForm" (ngSubmit)="addUser(userForm.value)">
+    <input type="text" placeholder="Enter Name" name="name" [ngModel]="selectedUser?.name">
+    <input type="text" placeholder="Enter Age" name="age" [ngModel]="selectedUser?.age">
+    <input type="text" placeholder="Enter email" name="email" [ngModel]="selectedUser?.email">
+    @if(!selectedUser){
+        <button>Add User</button>
+    } @else {
+        <button>Update User Details</button>
+    }
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <!-- <td>ID</td> -->
+            <td>Name</td>
+            <td>Age</td>
+            <td>Email ID</td>
+            <td colspan="2">Action</td>
+        </tr>
+    </thead>
+    <tbody>
+        @for(user of usersList; track user.id){
+        <tr>
+            <!-- <td> {{user.id}}</td> -->
+            <td> {{user.name}}</td>
+            <td> {{user.age}}</td>
+            <td> {{user.email}}</td>
+            <td> <Button (click)="fetchUser(user.id)">Update</Button></td>
+            <td> <Button (click)="deleteUser(user.id)">Delete</Button></td>
+        </tr>
+        }
+    </tbody>
+</table>
