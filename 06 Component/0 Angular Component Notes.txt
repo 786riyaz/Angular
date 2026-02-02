@@ -9,7 +9,7 @@ ts
 
 Types of Components :: Normal Component, Inline Component, Custom Component
 
-Command to generate a Component 
+Command to generate a Component ::: 
 ng generate component <Component Name>
 ng generate component login
 ng g c signup
